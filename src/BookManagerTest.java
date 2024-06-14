@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-class BookManagerTest2 {
+class BookManagerTest {
 
   private BookManager bookManager;
 
