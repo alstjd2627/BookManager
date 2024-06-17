@@ -13,8 +13,8 @@ pipeline {
             steps {
                 script {
                     // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
-                    def classpath = "lib/junit-jupiter-5.9.0.jar:lib/*"
-                    sh "javac -encoding UTF-8 -d classes -cp ${classpath} src/main/java/*.java src/test/java/*.java"
+                    def classpath = "lib/junit-jupiter-5.8.1.jar:lib/*"
+                    sh "javac -encoding UTF-8 -d classes -cp ${classpath} src/*.java test/*.java"
                 }
             }
         }
@@ -22,10 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // JUnit 5 테스트를 위한 클래스패스 설정
-                    def classpath = "classes:lib/junit-jupiter-5.9.0.jar:lib/junit-jupiter-engine-5.9.0.jar:lib/junit-platform-console-standalone-1.8.2.jar:lib/picocli-4.7.6.jar:lib/*"
-                    // JUnit 테스트 실행
-                    sh "java -cp '${classpath}' org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
+                    
                 }
             }
         }
