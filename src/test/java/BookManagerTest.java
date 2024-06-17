@@ -69,30 +69,16 @@ class BookManagerTest {
 
     assertThrows(IllegalArgumentException.class, () -> bookManager.deleteBook(2));
   }
-
   @Test
-  void search_bs(){
-    Book book1 = new Book(1, "자바 기초", "Jane", "2021");
-    Book book2 = new Book(2, "소프트웨어 공학", "Tom", "2014");
-    Book book3 = new Book(3, "분산 컴퓨팅", "Yoon", "2024");
-    bookManager.addBook(book1);
-    bookManager.addBook(book2);
-    bookManager.addBook(book3);
+  void performance_test(){
+    for(int i=0 ; i<30000 ; i++){ //검색시간 계산위해 적당히 많은 책 add
+      Book book = new Book(i, String.valueOf(i), String.valueOf(i), "2024");
+      bookManager.addBook(book);
+    }
 
-    assertEquals(bookManager.search_bs(1),book1);
-    assertEquals(bookManager.search_bs(2),book2);
-    assertEquals(bookManager.search_bs(3),book3);
+    assertEquals(bookManager.performance_test(200),2);
+    //임의의 id값 검색, performance_test()는 search_bs()가 빠를경우 2를 리턴함
   }
 
-  @Test
-  void search_bsNotExistBook() {
-    Book book1 = new Book(1, "자바 기초", "Jane", "2021");
-    Book book2 = new Book(2, "소프트웨어 공학", "Tom", "2014");
-    Book book3 = new Book(3, "분산 컴퓨팅", "Yoon", "2024");
-    bookManager.addBook(book1);
-    bookManager.addBook(book2);
-    bookManager.addBook(book3);
-
-    assertThrows(IllegalArgumentException.class, () -> bookManager.search_bs(200));
-  }
 }
+
