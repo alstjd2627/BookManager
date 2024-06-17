@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+  environment {
+        JAVA_TOOL_OPTIONS = "-Dfile.encoding=UTF-8"
+    }
+
     tools {
         maven 'Maven3.9.6' // Jenkins에서 설정한 Maven 이름을 사용합니다.
     }
