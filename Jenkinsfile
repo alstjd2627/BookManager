@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // JUnit 5 테스트를 위한 클래스패스 설정
-                    def classpath = ":lib/*"
+                    def classpath = "lib/*"
                     // JUnit 테스트 실행
                     sh "java -cp '${classpath}' org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
                 }
