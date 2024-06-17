@@ -10,7 +10,7 @@ public class BookManager {
     for (Book book : bookList) {
       if (Objects.equals(book.getId(), id)) {
         System.out.printf("검색결과:\n{id: '%d', 제목: '%s', 저자: '%s', 출판년도: '%s'}.\n",
-            book.getId(), book.getTitle(), book.getAuthor(), book.getYear());
+                book.getId(), book.getTitle(), book.getAuthor(), book.getYear());
         return book;
       }
     }
@@ -28,7 +28,7 @@ public class BookManager {
     }
     bookList.add(newBook);
     System.out.printf("{id: '%d', 제목: '%s', 저자: '%s', 출판년도: '%s'}도서가 추가되었습니다.\n",
-        newBook.getId(), newBook.getTitle(), newBook.getAuthor(), newBook.getYear());
+            newBook.getId(), newBook.getTitle(), newBook.getAuthor(), newBook.getYear());
   }
 
   public void deleteBook(int id) {
@@ -42,7 +42,7 @@ public class BookManager {
     if (bookToDelete != null) {
       bookList.remove(bookToDelete);
       System.out.printf("{id: '%d', 제목: '%s', 저자: '%s', 출판년도: '%s'}도서를 삭제했습니다.\n",
-          bookToDelete.getId(),bookToDelete.getTitle(),bookToDelete.getAuthor(),bookToDelete.getYear());
+              bookToDelete.getId(),bookToDelete.getTitle(),bookToDelete.getAuthor(),bookToDelete.getYear());
     } else {
       System.out.println(("해당 ID(" + id + ")의 도서를 찾을 수 없습니다."));
       throw new IllegalArgumentException("해당 ID(" + id + ")의 도서를 찾을 수 없습니다.");
@@ -65,5 +65,34 @@ public class BookManager {
     }
     System.out.println("검색된 도서가 없습니다."); //모두 검사해도 해당 id값이 없을경우.
     throw new IllegalArgumentException("검색된 도서가 없습니다.");
+  }
+
+  public int performance_test(int id){
+    //searchBook()
+    long beforeTime = System.nanoTime(); //코드 실행 전 시간
+
+    searchBook(id);
+
+    long afterTime = System.nanoTime(); // 코드 실행 후 시간
+    long Time1 = (afterTime - beforeTime); //두 시간의 차
+    System.out.println("searchBook() 시간차이 : "+Time1+"ns");
+
+    //search_bs()
+    beforeTime = System.nanoTime();
+
+    search_bs(id);
+
+    afterTime = System.nanoTime();
+    long Time2 = (afterTime - beforeTime);
+    System.out.println("search_bs() 시간차이 : "+Time2+"ns");
+
+    if(Time1<Time2) { //더 빠른것 출력후 리턴, 기존의 searchBook()은 1, search_bs()는 2 리턴.
+      System.out.println("searchBook() is faster");
+      return 1;
+    }
+    else {
+      System.out.println("search_bs() is faster");
+      return 2;
+    }
   }
 }
