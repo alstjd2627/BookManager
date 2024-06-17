@@ -21,6 +21,10 @@ pipeline {
             steps {
                 // Maven 테스트를 수행합니다.
                 sh 'mvn test'
+                sh '''
+                                java -cp "classes:lib/*:path/to/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar" \
+                                org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt
+                                '''
             }
         }
     }
