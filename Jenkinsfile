@@ -19,8 +19,8 @@ pipeline {
                stage('Test') {
                    steps {
                        // 테스트 단계
-                       sh 'java -cp classes:lib/junit-jupiter-5.9.0.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt'
-                       sh 'java -cp classes:lib/junit-jupiter-5.9.0.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt'
+                       sh 'java -cp classes:lib/junit-platform-console-standalone-1.8.2.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt'
+                       sh 'java -cp classes:libjunit-platform-console-standalone-1.8.2.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt'
                    }
                }
     }
