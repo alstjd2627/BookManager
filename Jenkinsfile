@@ -17,12 +17,14 @@ pipeline {
                }
 
                stage('Test') {
-                   steps {
-                       // 테스트 단계
-                        sh 'java -cp classes:lib/junit-jupiter-5.9.0.jar:lib/junit-jupiter-engine-5.9.0.jar:lib/junit-platform-console-standalone-1.9.0.jar:lib/picocli-4.7.6.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt'
-                        sh 'java -cp classes:lib/junit-jupiter-5.9.0.jar:lib/junit-jupiter-engine-5.9.0.jar:lib/junit-platform-console-standalone-1.9.0.jar:lib/picocli-4.7.6.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt'
-                   }
-               }
+                           steps {
+                               script {
+                                   def classpath = "classes:lib/junit-jupiter-5.9.0.jar:lib/junit-jupiter-engine-5.9.0.jar:lib/junit-platform-console-standalone-1.9.0.jar:lib/picocli-4.7.6.jar:lib/*"
+                                   sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt"
+                                   sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt"
+                               }
+                           }
+                       }
     }
 
     post {

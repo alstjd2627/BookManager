@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec5e1c15-54f6-4db4-9a02-5f313a6328d9" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/info_picocli.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/picocli-4.7.6.jar/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/picocli-4.7.6.jar/META-INF/versions/9/module-info.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/picocli-4.7.6.jar/picocli/AutoComplete.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/picocli-4.7.6.jar/picocli/CommandLine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BookManager.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
