@@ -48,4 +48,22 @@ public class BookManager {
       throw new IllegalArgumentException("해당 ID(" + id + ")의 도서를 찾을 수 없습니다.");
     }
   }
+
+  public Book search_bs(int id){
+    if(bookList.isEmpty()){ //비어있으면 indexbound오류 나므로 먼저 검사.
+      System.out.println("검색된 도서가 없습니다.");
+      throw new IllegalArgumentException("검색된 도서가 없습니다.");
+    }
+    int low=0, high= bookList.size()-1, mid; //binary_search 위한 세팅
+    mid=(low+high)/2;
+
+    while(low<=high){ //해당 id값이 없을때까지
+      mid=(low+high)/2;
+      if(bookList.get(mid).getId() == id) return bookList.get(mid);
+      else if(bookList.get(mid).getId()>id) high=mid-1;
+      else low=mid+1;
+    }
+    System.out.println("검색된 도서가 없습니다."); //모두 검사해도 해당 id값이 없을경우.
+    throw new IllegalArgumentException("검색된 도서가 없습니다.");
+  }
 }

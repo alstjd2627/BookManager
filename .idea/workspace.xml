@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec5e1c15-54f6-4db4-9a02-5f313a6328d9" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BookManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +118,7 @@
       <workItem from="1718624965300" duration="2096000" />
       <workItem from="1718627086049" duration="2014000" />
       <workItem from="1718629106850" duration="1957000" />
+      <workItem from="1718631313002" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
