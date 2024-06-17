@@ -1,6 +1,9 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven3.9.6' // Jenkins에서 설정한 Maven 이름을 사용합니다.
+    }
     stages {
         stage('Checkout') {
             steps {
