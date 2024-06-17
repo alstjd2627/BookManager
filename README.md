@@ -49,7 +49,7 @@ eclips 대신 intelliJ IDE를 사용해 보고싶었다. 이클립스는 자동�
 ![image](https://github.com/alstjd2627/BookManager/assets/119108655/ab59056a-2ac6-49a8-a9d1-678baae7af3d)
 ![image](https://github.com/alstjd2627/BookManager/assets/119108655/0c303900-9d92-4345-9ec4-e0f25c7197bb)
 ![image](https://github.com/alstjd2627/BookManager/assets/119108655/733eaf96-71e9-45ab-afe8-b6359f27c686)
-
+![image](https://github.com/alstjd2627/BookManager/assets/119108655/b17a12b1-892c-4bca-8f14-8efa18323418)
 
 ## 🔗 깃허브 주소
 
