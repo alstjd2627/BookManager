@@ -39,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/kimminseong/Desktop/spring/BookManager",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -67,7 +67,7 @@
       <updated>1716431048807</updated>
       <workItem from="1716431049904" duration="2786000" />
       <workItem from="1718354191261" duration="496000" />
-      <workItem from="1718608012827" duration="673000" />
+      <workItem from="1718608012827" duration="1431000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
