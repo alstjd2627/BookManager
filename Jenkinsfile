@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
                 // window 일 경우 bat
-                sh 'javac -encoding UTF-8 -d classes BookManager/src/**/*.java'
+                sh 'javac -encoding UTF-8 -d classes BookManager/src/*.java'
             }
         }
 
@@ -21,7 +21,8 @@ pipeline {
             steps {
                 // 테스트 단계 (테스트 명령어 예시)
                 // 예시: 테스트를 실행하고 결과를 test_results.txt에 저장
-                sh 'java -cp classes org.junit.runner.JUnitCore BookManagerTests > test_results.txt'
+                sh 'java -cp classes org.junit.runner.JUnitCore BookManagerTest > test_results1.txt'
+                h 'java -cp classes org.junit.runner.JUnitCore BookManagerTest2 > test_results2.txt'
             }
         }
     }
