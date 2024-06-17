@@ -9,22 +9,20 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
-                // Windows일 경우 bat
-                sh 'javac -encoding UTF-8 -d classes -cp lib/* src/*.java'
-            }
-        }
+       stage('Build') {
+                   steps {
+                       // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
+                       sh 'javac -encoding UTF-8 -d classes -cp lib/junit-jupiter-5.9.0.jar:lib/* src/*.java'
+                   }
+               }
 
-        stage('Test') {
-            steps {
-                // 테스트 단계
-                // JUnit 5 라이브러리를 포함한 테스트 실행
-                sh 'java -cp classes:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt'
-                sh 'java -cp classes:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt'
-            }
-        }
+               stage('Test') {
+                   steps {
+                       // 테스트 단계
+                       sh 'java -cp classes:lib/junit-jupiter-5.9.0.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt'
+                       sh 'java -cp classes:lib/junit-jupiter-5.9.0.jar:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt'
+                   }
+               }
     }
 
     post {
