@@ -9,22 +9,26 @@ pipeline {
             }
         }
 
-       stage('Build') {
-                   steps {
-                       // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
-                       sh 'javac -encoding UTF-8 -d classes -cp lib/junit-jupiter-5.9.0.jar:lib/* src/*.java'
-                   }
-               }
+        stage('Build') {
+            steps {
+                script {
+                    // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
+                    def classpath = "lib/junit-jupiter-5.9.0.jar:lib/*"
+                    sh "javac -encoding UTF-8 -d classes -cp ${classpath} src/*.java"
+                }
+            }
+        }
 
-               stage('Test') {
-                           steps {
-                               script {
-                                   def classpath = "classes:lib/junit-jupiter-5.9.0.jar:lib/junit-jupiter-engine-5.9.0.jar:lib/junit-platform-console-standalone-1.9.0.jar:lib/picocli-4.7.6.jar:lib/*"
-                                   sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt"
-                                   sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt"
-                               }
-                           }
-                       }
+        stage('Test') {
+            steps {
+                script {
+                    // JUnit 실행 시 클래스패스 설정
+                    def classpath = "classes:lib/junit-jupiter-5.9.0.jar:lib/junit-jupiter-engine-5.9.0.jar:lib/junit-platform-console-standalone-1.8.2.jar:lib/picocli-4.7.6.jar:lib/*"
+                    sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt"
+                    sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt"
+                }
+            }
+        }
     }
 
     post {
