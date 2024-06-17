@@ -25,5 +25,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="junit.platform.console.standalone" level="project" />
+    <orderEntry type="library" name="info.picocli" level="project" />
   </component>
 </module>
