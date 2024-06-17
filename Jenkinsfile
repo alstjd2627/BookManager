@@ -29,7 +29,7 @@ pipeline {
         // 빌드가 끝난 후 수행할 작업을 정의합니다.
         always {
 
-            archiveArtifacts 'test_result.txt'
+            archiveArtifacts '**/target/surefire-reports/BookManagerTest.txt'
         }
         success {
             echo 'Build and tests succeeded!'
