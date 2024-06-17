@@ -35,6 +35,7 @@ pipeline {
         always {
 
             archiveArtifacts '**/target/surefire-reports/BookManagerTest.txt'
+            archiveArtifacts '**/test_result.txt'
         }
         success {
             echo 'Build and tests succeeded!'
