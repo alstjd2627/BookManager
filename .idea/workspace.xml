@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec5e1c15-54f6-4db4-9a02-5f313a6328d9" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BookManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookManagerTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BookManagerTest2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
@@ -63,6 +64,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
