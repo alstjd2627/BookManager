@@ -20,15 +20,16 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                script {
-                    // JUnit 실행 시 클래스패스 설정
-                    def classpath = "classes:lib/junit-jupiter-5.9.0.jar:lib/junit-jupiter-engine-5.9.0.jar:lib/junit-platform-console-standalone-1.8.2.jar:lib/picocli-4.7.6.jar:lib/*"
-                    sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt"
-                    sh "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt"
+                    steps {
+                        script {
+                            // JUnit 5 테스트를 위한 클래스패스 설정
+                            def classpath = "classes;lib/junit-jupiter-5.9.0.jar;lib/junit-jupiter-engine-5.9.0.jar;lib/junit-platform-console-standalone-1.7.1.jar;lib/picocli-4.7.6.jar;lib/*"
+                            def junitConsoleJar = "lib/junit-platform-console-standalone-1.7.1.jar" // 정확한 경로 설정
+                            // JUnit 테스트 실행
+                            bat "java -cp ${classpath} org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
+                        }
+                    }
                 }
-            }
-        }
     }
 
     post {
