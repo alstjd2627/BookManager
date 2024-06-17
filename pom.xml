@@ -1,0 +1,9 @@
+<dependencies>
+  <!-- JUnit 5 의존성 추가 -->
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
