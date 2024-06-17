@@ -4,43 +4,38 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // 소스코드 체크아웃
+                // SCM(소스 코드 관리) 시스템에서 소스 코드를 가져옵니다.
                 checkout scm
             }
         }
-
         stage('Build') {
             steps {
-                script {
-                    // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
-                    def classpath = "lib/junit-jupiter-5.8.1.jar:lib/*"
-                    sh "javac -encoding UTF-8 -d classes -cp ${classpath} src/*.java test/*.java"
-                }
+                // Maven 빌드를 수행합니다.
+                sh 'mvn clean compile'
             }
         }
-
         stage('Test') {
             steps {
-                script {
-                    // JUnit 5 테스트를 위한 클래스패스 설정
-                    def classpath = "lib/*"
-                    // JUnit 테스트 실행
-                    sh "java -cp '${classpath}' org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
-                }
+                // Maven 테스트를 수행합니다.
+                sh 'mvn test'
             }
         }
     }
 
     post {
+        // 빌드가 끝난 후 수행할 작업을 정의합니다.
         always {
-            // 테스트 결과 파일을 저장하기 위해 아카이브
-            archiveArtifacts artifacts: 'test_results.txt', allowEmptyArchive: true
-        }
-        failure {
-            echo 'Build or test failed'
+            // JUnit 테스트 결과를 보고합니다.
+            junit '**/target/surefire-reports/*.xml'
+
+            // 빌드 아티팩트를 보관합니다.
+            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
         }
         success {
-            echo 'Build and test succeeded'
+            echo 'Build and tests succeeded!'
+        }
+        failure {
+            echo 'Build or tests failed.'
         }
     }
 }
