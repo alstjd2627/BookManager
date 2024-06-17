@@ -23,7 +23,7 @@ pipeline {
                 sh 'mvn test'
                  sh '''
                                 java -cp "classes:lib/junit-platform-console-standalone-1.7.1.jar" \
-                                org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt
+                                org.junit.platform.console.ConsoleLauncher --scan-classpath > test_result.txt
                                 '''
 
             }
