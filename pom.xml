@@ -46,13 +46,40 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M5</version> <!-- 최신 버전 확인 후 사용하세요 -->
+        <version>3.0.0-M5</version>
         <configuration>
           <includes>
             <include>**/*Test.java</include>
           </includes>
           <useModulePath>false</useModulePath>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.2</version>
+        <executions>
+          <execution>
+            <id>copy-junit-console</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/libs</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>false</overWriteSnapshots>
+              <overWriteIfNewer>true</overWriteIfNewer>
+              <dependencies>
+                <dependency>
+                  <groupId>org.junit.platform</groupId>
+                  <artifactId>junit-platform-console-standalone</artifactId>
+                  <version>1.7.1</version>
+                </dependency>
+              </dependencies>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

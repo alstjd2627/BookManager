@@ -3,7 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-class BookManagerTest2 extends BookManager {
+class BookManager2Test extends BookManager {
 
 	@BeforeEach
 	void setUp() throws Exception {
