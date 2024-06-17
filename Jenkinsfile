@@ -12,17 +12,17 @@ pipeline {
         stage('Build') {
             steps {
                 // Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
-                // window 일 경우 bat
-                sh 'javac -encoding UTF-8 -d classes src/*.java'
+                // Windows일 경우 bat
+                sh 'javac -encoding UTF-8 -d classes -cp lib/* src/*.java'
             }
         }
 
         stage('Test') {
             steps {
-                // 테스트 단계 (테스트 명령어 예시)
-                // 예시: 테스트를 실행하고 결과를 test_results.txt에 저장
-                sh 'java -cp classes org.junit.runner.JUnitCore BookManagerTest > test_results1.txt'
-                h 'java -cp classes org.junit.runner.JUnitCore BookManagerTest2 > test_results2.txt'
+                // 테스트 단계
+                // JUnit 5 라이브러리를 포함한 테스트 실행
+                sh 'java -cp classes:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest > test_results1.txt'
+                sh 'java -cp classes:lib/* org.junit.platform.console.ConsoleLauncher --classpath classes --select-class BookManagerTest2 > test_results2.txt'
             }
         }
     }
@@ -30,7 +30,7 @@ pipeline {
     post {
         always {
             // 테스트 결과 파일을 저장하기 위해 아카이브
-            archiveArtifacts 'test_results.txt'
+            archiveArtifacts artifacts: 'test_results*.txt', allowEmptyArchive: true
         }
         failure {
             echo 'Build or test failed'
