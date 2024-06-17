@@ -1,16 +1,10 @@
-# 소공 리드미
-
-태그: 소공
-구분: 학교공부
-날짜: 2024년 6월 17일
-
 ## 😎 역할 분담
 
 강민혁(C011215) : search_bs() 구현
 
-김민성(C011217) : performance_test() 구현
+김민성(C011217) : junit search_bs() test
 
-김다희(B935042) : junit test
+김다희(B935042) : performance_test() 구현, test
 
 ## 🤯 git 트러블 슈팅
 
@@ -39,6 +33,23 @@ eclips 대신 intelliJ IDE를 사용해 보고싶었다. 이클립스는 자동�
 
 <img width="912" alt="image" src="https://github.com/alstjd2627/BookManager/assets/119108655/eff6df5a-84d6-49e6-9193-bcfc46adf242">
 버전 오류인 것 같아 여러번 재시도 → 실패
+
+2) maven 라이브러리로 해결하고자 함
+   ![image](https://github.com/alstjd2627/BookManager/assets/119108655/d3befa63-3c3d-430b-a81a-58d6dfdc8414)
+   테스트 오류
+   ![image](https://github.com/alstjd2627/BookManager/assets/119108655/0fda10c0-8b34-4510-bcfc-c4e306355da3)
+   .txt 파일 생성 오류 → maven은 .xml 파일 기본 생성
+3) maven의 target을 바꿔줌 -> txt 파일 생성
+
+
+## 😎결과 화면(output log)
+![image](https://github.com/alstjd2627/BookManager/assets/119108655/4d74c693-b2df-4a2a-b04d-0ecb710a5276)
+![image](https://github.com/alstjd2627/BookManager/assets/119108655/3bb0727e-2c6f-485e-9242-3da26a871112)
+![image](https://github.com/alstjd2627/BookManager/assets/119108655/43cf0f72-1ddf-487c-8ffd-ec564403e16f)
+![image](https://github.com/alstjd2627/BookManager/assets/119108655/ab59056a-2ac6-49a8-a9d1-678baae7af3d)
+![image](https://github.com/alstjd2627/BookManager/assets/119108655/0c303900-9d92-4345-9ec4-e0f25c7197bb)
+![image](https://github.com/alstjd2627/BookManager/assets/119108655/733eaf96-71e9-45ab-afe8-b6359f27c686)
+
 
 ## 🔗 깃허브 주소
 
