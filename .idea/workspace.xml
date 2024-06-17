@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec5e1c15-54f6-4db4-9a02-5f313a6328d9" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/report/a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BookManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BookManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BookManagerTest2.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +121,7 @@
       <workItem from="1718608012827" duration="2919000" />
       <workItem from="1718624542036" duration="133000" />
       <workItem from="1718624965300" duration="2096000" />
-      <workItem from="1718627086049" duration="636000" />
+      <workItem from="1718627086049" duration="1419000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

@@ -28,11 +28,8 @@ pipeline {
     post {
         // 빌드가 끝난 후 수행할 작업을 정의합니다.
         always {
-            // JUnit 테스트 결과를 보고합니다.
-            junit '**/target/surefire-reports/*.xml'
 
-            // 빌드 아티팩트를 보관합니다.
-            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+            archiveArtifacts 'test_result.txt'
         }
         success {
             echo 'Build and tests succeeded!'
